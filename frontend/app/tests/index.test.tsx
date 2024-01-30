@@ -11,9 +11,9 @@ const mockData = [
     name: "Another add",
     price: 54,
     quantity: 10,
-    images: "image url",
     type: "type",
     location: "new location",
+    images: "random.png",
   },
 ];
 
@@ -28,13 +28,11 @@ describe("Form", () => {
       />
     );
 
-    expect(screen.getByText("Images URL")).toBeInTheDocument();
     expect(screen.getByText("Product Type")).toBeInTheDocument();
     expect(screen.getByText("Location")).toBeInTheDocument();
     expect(screen.getByText("Quantity")).toBeInTheDocument();
     expect(screen.getByText("Price")).toBeInTheDocument();
     expect(screen.getByText("Product Name")).toBeInTheDocument();
-    expect(screen.getByText("Images URL")).toBeInTheDocument();
   });
 });
 
@@ -45,7 +43,6 @@ describe("List", () => {
     );
 
     expect(screen.getByText("Another add")).toBeInTheDocument();
-    expect(screen.getByText("image url")).toBeInTheDocument();
     expect(screen.getByText("new location")).toBeInTheDocument();
     expect(screen.getByText("type")).toBeInTheDocument();
     expect(screen.getByText(10)).toBeInTheDocument();

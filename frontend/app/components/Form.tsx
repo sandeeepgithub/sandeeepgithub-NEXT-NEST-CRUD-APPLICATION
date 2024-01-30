@@ -20,8 +20,6 @@ const ProductForm = ({ data, setEdit, editHandler, addHandler }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({ formData });
-
     const form = new FormData();
     form.append("name", formData.name);
     form.append("price", formData.price);
@@ -120,7 +118,7 @@ const ProductForm = ({ data, setEdit, editHandler, addHandler }) => {
             type="number"
             id="quantity"
             name="quantity"
-            value={data?.quantity || formData.quantity}
+            value={formData.quantity}
             onChange={handleChange}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Enter quantity"
@@ -161,7 +159,7 @@ const ProductForm = ({ data, setEdit, editHandler, addHandler }) => {
             type="text"
             id="type"
             name="type"
-            value={data?.type || formData.type}
+            value={formData.type}
             onChange={handleChange}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Enter product type"
@@ -179,7 +177,7 @@ const ProductForm = ({ data, setEdit, editHandler, addHandler }) => {
             type="text"
             id="location"
             name="location"
-            value={data?.location || formData.location}
+            value={formData.location}
             onChange={handleChange}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Enter location"
